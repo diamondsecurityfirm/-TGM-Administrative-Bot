@@ -13,6 +13,7 @@ let soruce = message
 let guild = message.guild
 let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
+var announcementchannel = channels.find("name", "announcements")
 
   if (message.content === '!invite') {
     message.reply('Here is the invite link! https://discord.gg/SJQ5t4Z');
@@ -49,17 +50,7 @@ var ruleschannel = channels.find("name", "rules")
       text: "© [TGM]"
     }
   }
-});
-});
-// Protectee Commands, Anti-Swear
-client.on('message', message => {
-
-let soruce = message
-let guild = message.guild
-let channels = guild.channels
-var announcementchannel = channels.find("name", "announcements")
-
- else if (message.content === '$roles')
+}); else if (message.content === '$roles')
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
@@ -92,8 +83,7 @@ var announcementchannel = channels.find("name", "announcements")
       text: "© DSF"
     }
   }
-});
-else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+}); else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
 }
