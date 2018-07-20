@@ -16,6 +16,7 @@ var ruleschannel = channels.find("name", "rules")
 var announcementchannel = channels.find("name", "announcements")
 
   if (message.content === '!invite') {
+    message.delete();
     message.reply('Here is the invite link! https://discord.gg/SJQ5t4Z');
   } else if (message.content === ';rules')
 	  ruleschannel.send({embed: {
@@ -51,6 +52,7 @@ var announcementchannel = channels.find("name", "announcements")
     }
   }
 }); else if (message.content === ';mandatorymasspatrol')
+           message.delete();
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
