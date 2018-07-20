@@ -59,7 +59,10 @@ let guild = message.guild
 let channels = guild.channels
 var announcementchannel = channels.find("name", "announcements")
 
-  if (message.content === ';mandatorymasspatrol')
+   if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+ message.delete();
+ message.reply("Swearing is against this discords rules!");
+} else if (message.content === ';mandatorymasspatrol')
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
@@ -85,10 +88,7 @@ var announcementchannel = channels.find("name", "announcements")
     }
   }
 });
-else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
- message.delete();
- message.reply("Swearing is against this discords rules!");
-}
 });
+
 
 client.login(process.env.BOT_TOKEN);
