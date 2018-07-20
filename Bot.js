@@ -57,7 +57,7 @@ var announcementchannel = channels.find("name", "announcements")
       name: message.author.username,
       icon_url: client.user.avatarURL
     },
-    title: "Mandatory Mass Patrol",
+    title: "@everyone Mandatory Mass Patrol",
     url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
     description: "You may find information listed below.",
     fields: [{
