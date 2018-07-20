@@ -71,7 +71,7 @@ var announcementchannel = channels.find("name", "announcements")
     description: "You may find information listed below..",
     fields: [{
         name: "Instructions",
-        value: "Enter " + (message.author) "'s server, STS in back of general store, Await further instructions in game."
+        value: "Enter the hosts server, STS in back of general store, Await further instructions in game."
       },
       {
         name: "If you cannot attend",
@@ -84,7 +84,8 @@ var announcementchannel = channels.find("name", "announcements")
       text: "© [TGM]"
     }
   }
-}); else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+});
+else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against this discords rules!");
 }
