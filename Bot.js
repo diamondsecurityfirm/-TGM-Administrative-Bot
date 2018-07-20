@@ -59,10 +59,33 @@ let guild = message.guild
 let channels = guild.channels
 var announcementchannel = channels.find("name", "announcements")
 
-  if (message.content === ";mandatorymasspatrol") {
-	  message.delete();
-    announcementchannel.send("@everyone" + (message.author) + " Is hosting a mass mandatory mass patrol in his server, not attending may lead to demotion!");
-  } else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+  if (message.content === ';mandatorymasspatrol')
+	  announcementchannel.send({embed: {
+    color: 3447003,
+    author: {
+      name: message.author,
+      icon_url: client.user.avatarURL
+    },
+    title: "Mandatory Mass Patrol",
+    url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
+    description: "You may find information listed below..",
+    fields: [{
+        name: "Instructions",
+        value: "Enter " + (message.author) "'s server, STS in back of general store, Await further instructions in game."
+      },
+      {
+        name: "If you cannot attend",
+	  value: "If you are unable to attend please DM the host and explain why you cannot attend the mass patrol."
+      },
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© [TGM]"
+    }
+  }
+});
+}); else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against this discords rules!");
 }
