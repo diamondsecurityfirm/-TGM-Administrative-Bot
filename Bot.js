@@ -50,31 +50,23 @@ var announcementchannel = channels.find("name", "announcements")
       text: "© [TGM]"
     }
   }
-}); else if (message.content === '$roles')
+}); else if (message.content === ';mandatorymasspatrol')
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "role-request",
-    url: "http://google.com",
-    description: "This channel is only for requesting roles, freely speaking will lead to a suspension/server ban!",
+    title: "Mandatory Mass Patrol",
+    url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
+    description: "You may find information listed below.",
     fields: [{
-        name: "Format",
-        value: "Use the format below, do not speak within the channel except for role requests!"
+        name: "Instructions",
+        value: "Enter the hosts server, STS in back of general store, Await further instructions in game."
       },
       {
-        name: "Roblox Username",
-	  value: "This is so we can change your nickname on the server."
-      },
-	  {
-        name: "Roblox Profile Link",
-	  value: "This is so we can perform a background check on you."
-      },
-	  {
-        name: "Rank in group",
-	  value: "This is used to put you as the correct rank, lying will lead to Blacklist from Diamond Security Firm!"
+        name: "If you cannot attend",
+	  value: "If you are unable to attend please DM the host and explain why you cannot attend the mass patrol."
       },
     ],
     timestamp: new Date(),
