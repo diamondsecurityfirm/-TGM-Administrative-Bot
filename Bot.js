@@ -57,13 +57,11 @@ client.on('message', message => {
 let soruce = message
 let guild = message.guild
 let channels = guild.channels
-var ProtectChannel = channels.find("name", "protection")
 var announcementchannel = channels.find("name", "announcements")
-var roleschannel = channels.find("name", "role-request")
 
-  if (message.content === ";requestprotection") {
+  if (message.content === ";mandatorymasspatrol") {
 	  message.delete();
-    ProtectChannel.send("@everyone" + "Protectee" + (message.author) + " Is requesting protection at their server!");
+    announcementchannel.send("@everyone" + (message.author) + " Is hosting a mass mandatory mass patrol in his server, not attending may lead to demotion!");
   } else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against this discords rules!");
