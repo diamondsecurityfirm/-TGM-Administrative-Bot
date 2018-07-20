@@ -59,36 +59,44 @@ let guild = message.guild
 let channels = guild.channels
 var announcementchannel = channels.find("name", "announcements")
 
-   if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
- message.delete();
- message.reply("Swearing is against this discords rules!");
-} else if (message.content === ';mandatorymasspatrol')
+ else if (message.content === '$roles')
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
       name: message.author,
       icon_url: client.user.avatarURL
     },
-    title: "Mandatory Mass Patrol",
-    url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
-    description: "You may find information listed below..",
+    title: "role-request",
+    url: "http://google.com",
+    description: "This channel is only for requesting roles, freely speaking will lead to a suspension/server ban!",
     fields: [{
-        name: "Instructions",
-        value: "Enter the hosts server, STS in back of general store, Await further instructions in game."
+        name: "Format",
+        value: "Use the format below, do not speak within the channel except for role requests!"
       },
       {
-        name: "If you cannot attend",
-	  value: "If you are unable to attend please DM the host and explain why you cannot attend the mass patrol."
+        name: "Roblox Username",
+	  value: "This is so we can change your nickname on the server."
+      },
+	  {
+        name: "Roblox Profile Link",
+	  value: "This is so we can perform a background check on you."
+      },
+	  {
+        name: "Rank in group",
+	  value: "This is used to put you as the correct rank, lying will lead to Blacklist from Diamond Security Firm!"
       },
     ],
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© [TGM]"
+      text: "© DSF"
     }
   }
 });
+else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+ message.delete();
+ message.reply("Swearing is against Diamond Security Firm Policy");
+}
 });
-
 
 client.login(process.env.BOT_TOKEN);
