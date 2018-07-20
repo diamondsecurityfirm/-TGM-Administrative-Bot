@@ -85,7 +85,7 @@ var announcementchannel = channels.find("name", "announcements")
   }
 }); else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
- message.reply("Swearing is against Diamond Security Firm Policy");
+ message.reply("Swearing is against [TGM] discord rules.");
 }
 });
 
