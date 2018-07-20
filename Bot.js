@@ -54,7 +54,7 @@ var announcementchannel = channels.find("name", "announcements")
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
-      name: client.user.username,
+      name: message.author.username,
       icon_url: client.user.avatarURL
     },
     title: "Mandatory Mass Patrol",
