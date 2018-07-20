@@ -84,7 +84,6 @@ var announcementchannel = channels.find("name", "announcements")
       text: "© [TGM]"
     }
   }
-});
 }); else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against this discords rules!");
