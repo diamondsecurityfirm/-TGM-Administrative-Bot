@@ -72,7 +72,7 @@ var announcementchannel = channels.find("name", "announcements")
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© DSF"
+      text: "© [TGM]"
     }
   }
 }); else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
