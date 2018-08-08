@@ -15,6 +15,7 @@ let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
 var announcementchannel = channels.find("name", "announcements")
 var oneplatoon = channels.find("name", "1st-platoon-chat")
+var twoplatoon = channels.find("name", "2nd-platoon-chat")
 
   if (message.content === '!invite') {
     message.reply('Here is the invite link! https://discord.gg/SJQ5t4Z');
@@ -97,6 +98,35 @@ var oneplatoon = channels.find("name", "1st-platoon-chat")
       {
         name: "Rule Three.",
 	value: "You are required to use the following loadout: Kentucky Rifle, Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Beret "
+      },
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© [TGM]"
+    }
+  }
+}); else if (message.content === ';2ndplatoonrules')
+	  twoplatoon.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "2nd Platoon Rules",
+    url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
+    description: "The rules listed below must be followed exactly or you may be demoted or Dishonarable Discharged.",
+    fields: [{
+        name: "Rule One.",
+        value: "You must report to the Corporal before reporting to the sergeant and then the Captain."
+      },
+      {
+        name: "Rule Two.",
+	value: "You are required to attend trainings and events."
+      },
+      {
+        name: "Rule Three.",
+	value: "You are required to use the following loadout: Kentucky Rifle, Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Tricorne "
       },
     ],
     timestamp: new Date(),
