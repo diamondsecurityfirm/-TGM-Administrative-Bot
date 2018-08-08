@@ -14,6 +14,7 @@ let guild = message.guild
 let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
 var announcementchannel = channels.find("name", "announcements")
+var oneplatoon = channels.find("name", "1st-platoon-chat")
 
   if (message.content === '!invite') {
     message.reply('Here is the invite link! https://discord.gg/SJQ5t4Z');
@@ -75,7 +76,37 @@ var announcementchannel = channels.find("name", "announcements")
       text: "© [TGM]"
     }
   }
-}); else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+}); else if (message.content === ';1stplatoonrules')
+	  oneplatoon.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "1st Platoon Rules",
+    url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
+    description: "The rules listed below must be followed exactly or you may be demoted or Dishonarable Discharged.",
+    fields: [{
+        name: "Rule One.",
+        value: "If a General or above requests protection you must report to their server if you're online."
+      },
+      {
+        name: "Rule Two.",
+	value: "You are required to capture at least 1 island per week, Failure to do so will lead to discharge from 1st Platoon."
+      },
+      {
+        name: "Rule Three.",
+	value: "You are required to use the following loadout: Kentucky Rifle, Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Beret "
+      },
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© [TGM]"
+    }
+  }
+});
+ else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
 }
