@@ -14,11 +14,12 @@ let guild = message.guild
 let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
 var announcementchannel = channels.find("name", "announcements")
-var oneplatoon = channels.find("name", "1st-platoon-chat")
-var twoplatoon = channels.find("name", "2nd-platoon-chat")
+var oneplatoon = channels.find("name", "1st-company-announcements")
 
   if (message.content === '!invite') {
     message.reply('Here is the invite link! https://discord.gg/SJQ5t4Z');
+  }  else if (message.content === '!commands') {
+    message.reply('Here is a list of my current commands! !invite [Creates a discord invite code], !commands [ Shows all the commands]');
   } else if (message.content === ';rules')
 	  ruleschannel.send({embed: {
     color: 3447003,
@@ -77,27 +78,23 @@ var twoplatoon = channels.find("name", "2nd-platoon-chat")
       text: "© [TGM]"
     }
   }
-}); else if (message.content === ';1stplatoonrules')
+}); else if (message.content === ';1stcompanyloadout')
 	  oneplatoon.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "1st Platoon Rules",
+    title: "1st company loadouts",
     url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
-    description: "The rules listed below must be followed exactly or you may be demoted or Dishonarable Discharged.",
+    description: "The loadouts listed below must be followed exactly or you may be demoted or Dishonarable Discharged.",
     fields: [{
-        name: "Rule One.",
-        value: "If a General or above requests protection you must report to their server if you're online."
+        name: "Low Rank Loadout.",
+	value: "If you are below the rank of Staff Sergeant you are required to use the following loadout: Kentucky Rifle, Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Tricorne"
       },
       {
-        name: "Rule Two.",
-	value: "You are required to capture at least 1 island per week, Failure to do so will lead to discharge from 1st Platoon."
-      },
-      {
-        name: "Rule Three.",
-	value: "You are required to use the following loadout: Kentucky Rifle, Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Beret "
+        name: "High Rank Loadout.",
+	value: "If you are the rank of Staff Sergeant or above you are required to use the following loadout: Kentucky Rifle (Optional), Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Tricorne(Optional)"
       },
     ],
     timestamp: new Date(),
@@ -106,37 +103,7 @@ var twoplatoon = channels.find("name", "2nd-platoon-chat")
       text: "© [TGM]"
     }
   }
-}); else if (message.content === ';2ndplatoonrules')
-	  twoplatoon.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "2nd Platoon Rules",
-    url: "https://www.roblox.com/games/1279997693/The-Northern-Frontier",
-    description: "The rules listed below must be followed exactly or you may be demoted or Dishonarable Discharged.",
-    fields: [{
-        name: "Rule One.",
-        value: "You must report to the Corporal before reporting to the sergeant and then the Captain."
-      },
-      {
-        name: "Rule Two.",
-	value: "You are required to attend trainings and events."
-      },
-      {
-        name: "Rule Three.",
-	value: "You are required to use the following loadout: Kentucky Rifle, Cutlass, Bandages, Flintlock balls, Faction Uniform, Faction Tricorne "
-      },
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© [TGM]"
-    }
-  }
-});
- else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+});  else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
 }
