@@ -22,6 +22,7 @@ var ruleschannel = channels.find("name", "rules")
 var announcementchannel = channels.find("name", "announcements")
 var oneplatoon = channels.find("name", "1st-company-announcements")
 
+
 if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
