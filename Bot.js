@@ -6,6 +6,11 @@ const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+
+client.on("ready", () => {
+  client.user.setGame(`Preforming administrative tasks`);
+});
+
 // General commands
 client.on('message', message => {
 	
