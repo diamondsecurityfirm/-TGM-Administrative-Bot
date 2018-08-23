@@ -32,7 +32,16 @@ var ruleschannel = channels.find("name", "rules")
     } else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
-}
+} else     
+    if(isCommand('Promote', message)){
+    	var username = args[1];
+    	if (username){
+    		message.channel.send(`Checking ROBLOX for ${username}`)
+    	} else {
+    		message.channel.send("Please enter a username.")
+    	}
+    	return;
+    }
 });
 	
 client.login(process.env.BOT_TOKEN);
