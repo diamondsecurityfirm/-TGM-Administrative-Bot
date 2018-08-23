@@ -27,7 +27,9 @@ var ruleschannel = channels.find("name", "rules")
 
    if(isCommand('Commands', message)){
     	message.reply(':one: !Commands (Lists the commands) :two: !Invite (Posts a invite code for general use) ');
-    }else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+    } else if(isCommand('Invite', message)){
+    	message.reply('Here is the invite code you have requested. https://discord.gg/nwa6k3G');
+    } else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
 }
