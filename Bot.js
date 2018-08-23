@@ -6,7 +6,6 @@ const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", 
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-});
 
 function isCommand(command, message){
 	var command = command.toLowerCase();
