@@ -9,18 +9,17 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+// General commands
+client.on('message', (message) => {
+if (message.author.bot) return; // Dont answer yourself.
+var args = message.content.split(/[ ]+/)
+   
 function isCommand(command, message){
 	var command = command.toLowerCase();
 	var content = message.content.toLowerCase();
 	return content.startsWith(prefix + command);
 }
 
-// General commands
-client.on('message', (message) => {
-if (message.author.bot) return; // Dont answer yourself.
-var args = message.content.split(/[ ]+/)
-   
-	
 let soruce = message
 let guild = message.guild
 let channels = guild.channels
