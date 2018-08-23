@@ -24,5 +24,6 @@ if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
 }
+});
 	
 client.login(process.env.BOT_TOKEN);
