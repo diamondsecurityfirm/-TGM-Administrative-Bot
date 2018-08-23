@@ -4,11 +4,8 @@ const newUsers = new Discord.Collection();
 const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", "dick", "vagina", "pussy","nigger","asshole","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit","shut up"];
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on("ready", () => {
   client.user.setGame(`Preforming administrative tasks`);
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
 // General commands
