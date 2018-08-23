@@ -19,6 +19,7 @@ function isCommand(command, message){
 	var content = message.content.toLowerCase();
 	return content.startsWith(prefix + command);
 }
+});
 
 let soruce = message
 let guild = message.guild
