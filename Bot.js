@@ -5,14 +5,9 @@ var prefix = '!';
 const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", "dick", "vagina", "pussy","nigger","asshole","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit","shut up"];
 
 client.on('ready', () => {
+ client.user.setGame(`Type !Commands for a list of commands.`);
   console.log(`Logged in as ${client.user.tag}!`);
 });
-
-client.on("ready", () => {
-  client.user.setGame(`Type !Commands for a list of commands.`);
-  console.log(`Ready to serve on ${client.guilds.size} servers, for ${client.users.size} users.`);
-});
-
 
 function isCommand(command, message){
 	var command = command.toLowerCase();
