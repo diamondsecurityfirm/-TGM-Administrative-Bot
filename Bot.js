@@ -27,7 +27,8 @@ var ruleschannel = channels.find("name", "rules")
    if(isCommand('Test', message)){
     	message.reply('Test has passed, new command system is up and working ;) ');
     }
-}); else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+});
+ else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
 }
