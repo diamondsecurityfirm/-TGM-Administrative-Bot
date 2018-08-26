@@ -41,7 +41,7 @@ var ruleschannel = channels.find("name", "rules")
     	}
     	return;
     } 
-if(isCommand('Ban', message)){
+if(isCommand('Ban', message)) {
  let modRole = message.guild.roles.find("name", "HQ");
     if(message.member.roles.has(modRole.id)) { 
       let banMember = message.guild.member(message.mentions.users.first());
