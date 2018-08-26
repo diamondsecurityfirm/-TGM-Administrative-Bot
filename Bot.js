@@ -50,5 +50,6 @@ if(isCommand('Ban', message)) {
     } else {
       return message.reply("You do not have the correct permissions to run this command!");
     }
+  }
 	
 client.login(process.env.BOT_TOKEN);
