@@ -40,14 +40,16 @@ var ruleschannel = channels.find("name", "rules")
     		message.channel.send("Please enter a username.")
     	}
     	return;
-    } else if(isCommand('Ban', message)){
-      let modRole = message.guild.roles.find("name", "HQ");
-      if(message.member.roles.has(modRole.id)) {
+    } 
+if(isCommand('Ban', message)){
+ let modRole = message.guild.roles.find("name", "HQ");
+    if(message.member.roles.has(modRole.id)) { 
       let banMember = message.guild.member(message.mentions.users.first());
       message.guild.member(banMember).ban();
       message.channel.sendMessage("Member banned.");
     } else {
-      return message.reply("You do not have the required permissions!");
-    } 
+      return message.reply("You do not have the correct permissions to run this command!");
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
