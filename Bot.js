@@ -50,6 +50,5 @@ var ruleschannel = channels.find("name", "rules")
     } else {
       message.reply("Your permission levels prevent you from using this command!");
     }
-});
-	
+
 client.login(process.env.BOT_TOKEN);
