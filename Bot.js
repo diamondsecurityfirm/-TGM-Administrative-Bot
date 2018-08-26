@@ -48,7 +48,7 @@ var ruleschannel = channels.find("name", "rules")
       message.guild.member(banMember).ban();
       message.channel.sendMessage("Member banned.");
     } else {
-      return message.reply("Your permission levels prevent you from using this command!");
+      message.reply("Your permission levels prevent you from using this command!");
     }
 });
 	
