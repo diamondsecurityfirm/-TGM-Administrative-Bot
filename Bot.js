@@ -57,7 +57,7 @@ var ruleschannel = channels.find("name", "rules")
     .addField("Tiime", message.createdAt)
     .addField("Reason", kReason);
 
-    let kickChannel = message.guild.channels.find(`name`, "admin-logs");
+    let kickChannel = channels.find(`name`, "admin-logs");
     if(!kickChannel) return message.channel.send("Can't find admin-logs channel.");
 
     message.guild.member(kUser).kick(kReason);
