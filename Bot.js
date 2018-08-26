@@ -49,6 +49,5 @@ var ruleschannel = channels.find("name", "rules")
     } else {
       return message.reply("You do not have the required permissions!");
     } 
-});
 
 client.login(process.env.BOT_TOKEN);
