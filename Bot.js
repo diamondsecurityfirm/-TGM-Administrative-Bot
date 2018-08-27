@@ -24,7 +24,7 @@ let soruce = message
 let guild = message.guild
 let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
-var kickChannel = channels.find("name", "admin-logs")
+let logchannel = channels.find("name", "admin-logs")
 
    if(isCommand('Commands', message)){
     	message.reply(':one: !Commands (Lists the commands) :two: !Invite (Posts a invite code for general use) ');
@@ -58,10 +58,10 @@ var kickChannel = channels.find("name", "admin-logs")
     .addField("Tiime", message.createdAt)
     .addField("Reason", kReason);
 
-    if(!kickChannel) return message.channel.send("Can't find admin-logs channel.");
+    if(!logchannel) return message.channel.send("Can't find admin-logs channel.");
 
     message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
+    logchannel.send(kickEmbed);
 	    
     return;
   }
