@@ -27,8 +27,37 @@ var ruleschannel = channels.find("name", "rules")
 var logchannel = channels.find("name", "admin-logs")
 
    if(isCommand('Commands', message)){
-    	message.reply(':one: !Commands (Lists the commands) :two: !Invite (Posts a invite code for general use) ');
-    } else if(isCommand('Invite', message)){
+    message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Commands list",
+    description: "All commands are shown below",
+    fields: [{
+        name: "!Commands",
+        value: "Responds with a list of commands"
+      },
+      {
+        name: "!Invite",
+        value: "Displays a invite code for the server that can be sent to other people."
+      },
+      {
+        name: "!kick @username [Reason]",
+        value: "This allows anyone ranked Ensign+ to kick someone from the discord server. (Does not kick them from roblox group)"
+      },
+      {
+        name: "!promote username",
+        value: "This allows anyone ranked Ensign+ to promote someone by 1 rank. (Does not currently work but will reply back)"
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© [TGM] The German Mercenaries"
+    }
+  } else if(isCommand('Invite', message)){
     	message.reply('Here is the invite code you have requested. https://discord.gg/nwa6k3G');
     } else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
