@@ -39,7 +39,7 @@ var logchannel = channels.find("name", "admin-logs")
     	if (username){
     		message.channel.send(`Checking [TGM] The German Mercenaries for ${username}`)
     	} else {
-    		message.channel.send("Please enter a username.")
+    		message.channel.send("Please enter a username!")
     	}
     	return;
     } else if(isCommand('Kick', message)){
