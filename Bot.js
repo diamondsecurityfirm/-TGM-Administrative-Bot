@@ -37,7 +37,7 @@ var logchannel = channels.find("name", "admin-logs")
     if(isCommand('Promote', message)){
     	var username = args[1];
     	if (username){
-    		message.channel.send(`Checking ROBLOX for ${username}`)
+    		message.channel.send(`Checking [TGM] The German Mercenaries for ${username}`)
     	} else {
     		message.channel.send("Please enter a username.")
     	}
