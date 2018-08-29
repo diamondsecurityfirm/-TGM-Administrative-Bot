@@ -56,8 +56,10 @@ var logchannel = channels.find("name", "admin-logs")
     footer: {
       icon_url: client.user.avatarURL,
       text: "© [TGM] The German Mercenaries"
-    } else if(isCommand('Invite', message)){
-    	message.reply('Here is the invite code you have requested. https://discord.gg/nwa6k3G');
+    } 
+  }
+ if(isCommand('Invite', message)){
+  message.reply('Here is the invite code you have requested. https://discord.gg/nwa6k3G');
     } else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against [TGM] discord rules.");
