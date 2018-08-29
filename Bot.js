@@ -49,7 +49,7 @@ var logchannel = channels.find("name", "admin-logs")
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to kick this person!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-    var kickEmbed = new Discord.RichEmbed()
+    const kickEmbed = new Discord.RichEmbed()
     .setTitle("Kicked User")
     .setAuthor("client.user.username", "client.user.avatarURL")
     .setDescription("Kick Command log")
@@ -63,7 +63,7 @@ var logchannel = channels.find("name", "admin-logs")
     if(!logchannel) return message.channel.send("Can't find admin-logs channel.");
 
     message.guild.member(kUser).kick(kReason);
-    logchannel.send(kickEmbed);
+    logchannel.send({kickEmbed});
 	    
     return;
   }
