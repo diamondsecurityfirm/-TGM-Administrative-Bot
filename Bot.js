@@ -24,7 +24,7 @@ let soruce = message
 let guild = message.guild
 let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
-let logchannel = channels.find("name", "admin-logs")
+var logchannel = channels.find("name", "admin-logs")
 
    if(isCommand('Commands', message)){
     	message.reply(':one: !Commands (Lists the commands) :two: !Invite (Posts a invite code for general use) ');
@@ -46,16 +46,16 @@ let logchannel = channels.find("name", "admin-logs")
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Can't find user!");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to kick this person!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-    let kickEmbed = new Discord.RichEmbed()
+    var kickEmbed = new Discord.RichEmbed()
     .setDescription("~Kick~")
     .setColor("#e56b00")
     .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
     .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
-    .addField("Tiime", message.createdAt)
+    .addField("Time", message.createdAt)
     .addField("Reason", kReason);
 
     if(!logchannel) return message.channel.send("Can't find admin-logs channel.");
