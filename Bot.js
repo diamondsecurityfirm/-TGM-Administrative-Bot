@@ -49,21 +49,25 @@ var logchannel = channels.find("name", "admin-logs")
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to kick this person!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-    const kickEmbed = new Discord.RichEmbed()
-    .setTitle("Kicked User")
-    .setAuthor("client.user.username", "client.user.avatarURL")
-    .setDescription("Kick Command log")
-    .setColor("#e56b00")
-    .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", kReason);
+    const embed = new Discord.RichEmbed()
+  .setTitle("This is your title, it can hold 256 characters")
+  .setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
+  .setColor(0x00AE86)
+  .setDescription("This is the main body of text, it can hold 2048 characters.")
+  .setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
+  .setImage("http://i.imgur.com/yVpymuV.png")
+  .setThumbnail("http://i.imgur.com/p2qNFag.png")
+  .setTimestamp()
+  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
+  .addField("This is a field title, it can hold 256 characters", "This is a field value, it can hold 2048 characters.")
+  .addField("Inline Field", "They can also be inline.", true)
+  .addBlankField(true)
+  .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
 
-    if(!logchannel) return message.channel.send("Can't find admin-logs channel.");
+   if(!logchannel) return message.channel.send("Can't find admin-logs channel.");
 
-    message.guild.member(kUser).kick(kReason);
-    logchannel.send({kickEmbed});
+   message.guild.member(kUser).kick(kReason);
+   logchannel.send({embed});
 	    
     return;
   }
