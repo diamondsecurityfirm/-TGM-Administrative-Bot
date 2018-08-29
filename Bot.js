@@ -49,7 +49,7 @@ var logchannel = channels.find("name", "admin-logs")
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to kick this person!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
-    var kickEmbed = new Discord.RichEmbed()
+    var kickEmbed = Discord.RichEmbed()
     .setDescription("~Kick~")
     .setColor("#e56b00")
     .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
