@@ -77,6 +77,7 @@ var logchannel = channels.find("name", "admin-logs")
     let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to kick this person!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+    message.delete();
 
     const embed = new Discord.RichEmbed()
   .setTitle("Kicked User log")
