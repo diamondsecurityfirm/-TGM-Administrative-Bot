@@ -58,9 +58,9 @@ var logchannel = channels.find("name", "admin-logs")
   .setTimestamp()
   .setURL("https://www.roblox.com/My/Groups.aspx?gid=4177017")
   .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-  .addField("Inline Field", "They can also be inline.", true)
-  .addBlankField(true)
-  .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
+  .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+  .addField("Kicked In", message.channel)
+  .addField("Reason", kReason);
 
    if(!logchannel) return message.channel.send("Can't find admin-logs channel.");
 
