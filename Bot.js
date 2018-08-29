@@ -51,7 +51,7 @@ var logchannel = channels.find("name", "admin-logs")
 
     const embed = new Discord.RichEmbed()
   .setTitle("Kicked User log")
-  .setAuthor("client.user.username", "client.user.avatarURL")
+  .setAuthor("[TGM] Administrative Bot", "https://cdn.discordapp.com/attachments/481549255652147210/484502178573058050/germanflag.jpg")
   .setColor(0x00AE86)
   .setDescription("This is the main body of text, it can hold 2048 characters.")
   .setFooter("A user has been kicked at", "http://i.imgur.com/w1vhFSR.png")
