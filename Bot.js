@@ -54,7 +54,7 @@ var logchannel = channels.find("name", "admin-logs")
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© [TGM] The German Mercenaries"
+      text: "� [TGM] The German Mercenaries"
     } 
    }
    })}   
@@ -99,12 +99,27 @@ var logchannel = channels.find("name", "admin-logs")
    logchannel.send({embed});
 	    
     return;
-  } else if(isCommand('Purge', message)){
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to run this command!");
-    if(!args[0]) return message.channel.send("You must enter a number of messages to delete!");
-    message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send("Deleted ${args[0]} messages.").then(msg => msg.delete(5000));
-    })}
+  }
+});
+
+client.on('message', (message) => {
+if (message.author.bot) return; // Dont answer yourself.
+var args = message.content.split(/[ ]+/)
+
+let soruce = message
+let guild = message.guild
+let channels = guild.channels
+var ruleschannel = channels.find("name", "rules")
+var logchannel = channels.find("name", "admin-logs")
+
+if(isCommand('Purge', message)){
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to run this command!");
+  if(!args[0]) return message.channel.send("You must enter a number of messages to delete!");
+  message.channel.bulkDelete(args[0]).then(() => {
+  message.channel.send("Deleted ${args[0]} messages.").then(msg => msg.delete(5000));
+}
+
+}
 
 	    
 client.login(process.env.BOT_TOKEN);
