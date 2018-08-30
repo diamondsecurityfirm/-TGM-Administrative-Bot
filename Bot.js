@@ -105,7 +105,7 @@ var logchannel = channels.find("name", "admin-logs")
     if(!args[0]) return message.channel.send("You must enter a number of messages to delete!");
     message.channel.bulkDelete(args[0]).then(() => {
     message.channel.send("Deleted ${args[0]} messages.").then(msg => msg.delete(5000));
-    });
+    };
   });
 
 	    
