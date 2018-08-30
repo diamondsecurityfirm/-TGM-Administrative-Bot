@@ -1,21 +1,21 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
-var prefix = '!';
+var prefix = "!";
 const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", "dick", "vagina", "pussy","nigger","asshole","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit","shut up"];
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+client.on("ready", () => {
+    console.log(`Logged in as ${client.user.tag}!`);
 });
 
 function isCommand(command, message){
-	var command = command.toLowerCase();
-	var content = message.content.toLowerCase();
-	return content.startsWith(prefix + command);
+var command = command.toLowerCase();
+var content = message.content.toLowerCase();
+return content.startsWith(prefix + command);
 }
 
 // General commands
-client.on('message', (message) => {
+client.on("message", (message) => {
 if (message.author.bot) return; // Dont answer yourself.
 var args = message.content.split(/[ ]+/)
 
@@ -25,7 +25,7 @@ let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
 var logchannel = channels.find("name", "admin-logs")
 
-   if(isCommand('Commands', message)){
+   if(isCommand("Commands", message)){
     message.channel.send({embed: {
     color: 3447003,
     author: {
@@ -54,25 +54,25 @@ var logchannel = channels.find("name", "admin-logs")
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "� [TGM] The German Mercenaries"
-    } 
+      text: "[TGM] The German Mercenaries"
+    }
    }
-   })}   
-  else if(isCommand('Invite', message)){
-  message.reply('Here is the invite code you have requested. https://discord.gg/nwa6k3G');
-    } else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
- message.delete();
- message.reply("Swearing is against [TGM] discord rules.");
-} else     
-    if(isCommand('Promote', message)){
-    	var username = args[1];
-    	if (username){
-    		message.channel.send(`Checking [TGM] The German Mercenaries for ${username}`)
-    	} else {
-    		message.channel.send("Please enter a username!")
-    	}
-    	return;
-    } else if(isCommand('Kick', message)){
+   })}
+  else if(isCommand("Invite", message)){
+  message.reply("Here is the invite code you have requested. https://discord.gg/nwa6k3G");
+  } else if ( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+  message.delete();
+  message.reply("Swearing is against [TGM] discord rules.");
+  } else
+  if(isCommand("Promote", message)){
+  var username = args[1];
+  if (username){
+   message.channel.send(`Checking [TGM] The German Mercenaries for ${username}`)
+  } else {
+   message.channel.send("Please enter a username!")
+  }
+   return;
+  } else if(isCommand("Kick", message)){
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("Can't find user!");
     let kReason = args.join(" ").slice(22);
@@ -97,11 +97,11 @@ var logchannel = channels.find("name", "admin-logs")
 
    message.guild.member(kUser).kick(kReason);
    logchannel.send({embed});
-	    
+
     return;
   }
 
-client.on('message', (message) => {
+client.on("message", (message) => {
 if (message.author.bot) return; // Dont answer yourself.
 var args = message.content.split(/[ ]+/)
 
@@ -111,10 +111,10 @@ let channels = guild.channels
 var ruleschannel = channels.find("name", "rules")
 var logchannel = channels.find("name", "admin-logs")
 
-if(isCommand('Purge', message)){
+if(isCommand("Purge", message)){
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to run this command!");
   if(!args[0]) return message.channel.send("You must enter a number of messages to delete!");
   message.channel.bulkDelete(args[0]).then(() => {
   message.channel.send("Deleted ${args[0]} messages.").then(msg => msg.delete(5000));
-	    
+
 client.login(process.env.BOT_TOKEN);
