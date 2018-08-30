@@ -106,6 +106,8 @@ var logchannel = channels.find("name", "admin-logs")
     message.channel.bulkDelete(args[0]).then(() => {
     message.channel.send("Deleted ${args[0]} messages.").then(msg => msg.delete(5000));
   }
+					     }
+					     }
 
 	    
 client.login(process.env.BOT_TOKEN);
