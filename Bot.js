@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const newUsers = new Discord.Collection();
 var prefix = "!";
 const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", "dick", "vagina", "pussy", "nigger", "asshole", "bitch", "bastard", "queer", "sex", "slut", "whore", "jerk", "jizz", "cunt", "crap", "shit", "shut up"];
+const AntiAt = ["@Dark_Dimensions#2896"];
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -61,6 +62,9 @@ client.on("message", (message) => {
         })
     } else if (isCommand("Invite", message)) {
         message.reply("Here is the invite code you have requested. https://discord.gg/nwa6k3G");
+    } else if (AntiAt.some(word => message.content.toLowerCase().includes(word))) {
+        message.delete();
+        message.reply("Please refrain from mentioning the owner!");
     } else if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
         message.delete();
         message.reply("Swearing is against [TGM] discord rules.");
