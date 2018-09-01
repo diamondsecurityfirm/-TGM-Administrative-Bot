@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const newUsers = new Discord.Collection();
 var prefix = "!";
 const swearWords = ["fuck", "flucking", "f/ck heads", "f/ck", "Niger", "f uck", "dick", "vagina", "pussy", "nigger", "asshole", "bitch", "bastard", "queer", "sex", "slut", "whore", "jerk", "jizz", "cunt", "crap", "shit", "shut up"];
-const AntiAt = ["@Dark_Dimensions#2896"];
+const AntiAt = ["@[HQ] Dark_Dimensions"];
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
