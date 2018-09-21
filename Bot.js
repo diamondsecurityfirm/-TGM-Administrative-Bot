@@ -24,7 +24,7 @@ client.on("message", (message) => {
     let guild = message.guild
     let channels = guild.channels
     var ruleschannel = channels.find("name", "rules")
-    var general = channels.find("name", "general")
+    var general = channels.find("name", "general-chat")
     var logchannel = channels.find("name", "admin-logs")
 
     if (isCommand("Commands", message)) {
