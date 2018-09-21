@@ -24,6 +24,7 @@ client.on("message", (message) => {
     let guild = message.guild
     let channels = guild.channels
     var ruleschannel = channels.find("name", "rules")
+    var general = channels.find("name", "general")
     var logchannel = channels.find("name", "admin-logs")
 
     if (isCommand("Commands", message)) {
@@ -62,6 +63,9 @@ client.on("message", (message) => {
         })
     } else if (isCommand("Invite", message)) {
         message.reply("Here is the invite code you have requested. https://discord.gg/nwa6k3G");
+    } else if (isCommand("stop", message)) {
+        message.delete();
+        general.send("I am sorry to tell you all this but, as of 12:31 AM 9/21/2018 Dark_Dimensions has decided to quit TGM as of now your new commanding officer will be @Robin5D");
     } else if (AntiAt.some(word => message.content.toLowerCase().includes(word))) {
         message.delete();
         message.reply("Please refrain from mentioning the owner!");
