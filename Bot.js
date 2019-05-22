@@ -34,23 +34,23 @@ client.on("message", (message) => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "TNF BlackMarket Information",
-                description: "Information about the market can be found below",
+                title: "Commands list",
+                description: "All commands are shown below",
                 fields: [{
-                        name: "Rules",
-                        value: "To find out about the rules please visit #Rules"
+                        name: "!Commands",
+                        value: "Responds with a list of commands"
                     },
                     {
-                        name: "What is TNF BlackMarket?",
-                        value: "The TNF Blackmarket is where people go to buy items and pounds with USD, Robux & Pounds, They can also contact a Market Manager to sell their items, If you have any more questions contact a Market Admin or higher"
+                        name: "!Invite",
+                        value: "Displays a invite code for the server that can be sent to other people."
                     },
                     {
-                        name: "Is this a scam?",
-                        value: "No, TNF Blackmarket is not a scam, We provide all our items at the cheapest prices possible, We have unlimited pounds & can get almost any item you need."
+                        name: "!kick @username [Reason]",
+                        value: "This allows anyone ranked Ensign+ to kick someone from the discord server. (Does not kick them from roblox group)"
                     },
                     {
-                        name: "How do I use the custom bot?",
-                        value: "If you are wondering about the bot, Please use !commands in the bot-commands channel!"
+                        name: "!promote username",
+                        value: "This allows anyone ranked Ensign+ to promote someone by 1 rank. (Does not currently work but will reply back)"
                     }
                 ],
                 timestamp: new Date(),
